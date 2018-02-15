@@ -1,0 +1,34 @@
+NAME:   prodmongo
+LAST DEPLOYED: Thu Feb 15 13:39:18 2018
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Secret
+NAME               TYPE    DATA  AGE
+prodmongo-mongodb  Opaque  2     2s
+
+==> v1/PersistentVolumeClaim
+NAME               STATUS   VOLUME   CAPACITY  ACCESS MODES  STORAGECLASS  AGE
+prodmongo-mongodb  Pending  default  2s
+
+==> v1/Service
+NAME               TYPE       CLUSTER-IP    EXTERNAL-IP  PORT(S)    AGE
+prodmongo-mongodb  ClusterIP  10.0.163.153  <none>       27017/TCP  2s
+
+==> v1beta1/Deployment
+NAME               DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+prodmongo-mongodb  1        1        1           0          1s
+
+==> v1/Pod(related)
+NAME                               READY  STATUS   RESTARTS  AGE
+prodmongo-mongodb-f9b9d444d-4ch7j  0/1    Pending  0         1s
+
+
+NOTES:
+MongoDB can be accessed via port 27017 on the following DNS name from within your cluster:
+prodmongo-mongodb.default.svc.cluster.local
+
+To connect to your database run the following command:
+
+   kubectl run prodmongo-mongodb-client --rm --tty -i --image bitnami/mongodb --command -- mongo --host prodmongo-mongodb
