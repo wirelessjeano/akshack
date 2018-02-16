@@ -22,7 +22,13 @@ spec:
           value: 'team2-ct'
         - name: MONGOHOST
           value: 'mongodb://sillymonkeysorders:PTXq1qzwbufLjlI2oaRCyiNhq0mB3lXiZP7bUmqHAa1g5wefLu1WrBszcQmq2AdgOYr6qxQ9MlmtsIFGZ3cG5w==@sillymonkeysorders.documents.azure.com:10255/?ssl=true'
-        - name: RABBITMQHOST
-          value: 'amqp://user:Sh7VXOTtEy@prod-rabbitmq.default.svc.cluster.local:5672'
+        - name: EVENTURL
+          value: 'https://orderfulfillment.servicebus.windows.net/orderfulfillment'
+        - name: EVENTPOLICYNAME
+          value: 'RootManageSharedAccessKey'
+        - name: EVENTPOLICYKEY
+          value: 'RsO8TJ4yJMMP5dlyIlIjjAUOHtbj3Kjv+vTzC0qJc8A='
+        - name: PARTITIONKEY
+          value: '0' 
         ports:
         - containerPort: 8080

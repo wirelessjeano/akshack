@@ -16,15 +16,19 @@ spec:
     spec:
       containers:
       - name: eventlistener
-        image: shanepeckham/rabbitmqlistenerack:v5
+        image: shanepeckham/eventhublistenerack:v5
         env:
         - name: TEAMNAME
           value: 'team2-ct'
         - name: MONGOHOST
           value: 'mongodb://prodmongo-mongodb.default.svc.cluster.local'
-        - name: RABBITMQHOST
-          value: 'amqp://user:Sh7VXOTtEy@prod-rabbitmq.default.svc.cluster.local:5672'
+        - name: EVENTHUBCONNSTRING
+          value: 'Endpoint=sb://orderfulfillment.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=RsO8TJ4yJMMP5dlyIlIjjAUOHtbj3Kjv+vTzC0qJc8A='
+        - name: EVENTHUBPATH
+          value: 'orderfulfillment'
         - name: PROCESSENDPOINT
           value: 'http://orderfulfillment-lb.default.svc.cluster.local:8080/v1/order'
+        - name: PARTITIONKEY
+          value: '0'
         ports:
         - containerPort: 8080
