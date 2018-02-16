@@ -20,10 +20,8 @@ spec:
         env:
         - name: TEAMNAME
           value: 'team2-ct'
-        - name: MONGOHOST
-          value: 'mongodb://prodmongo-mongodb.default.svc.cluster.local'
         - name: EVENTHUBCONNSTRING
-          value: 'Endpoint=sb://orderfulfillment.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=RsO8TJ4yJMMP5dlyIlIjjAUOHtbj3Kjv+vTzC0qJc8A='
+          value: 'Endpoint=sb://orderfulfillment.servicebus.windows.net/;SharedAccessKeyName=orderfulfillmentsap;SharedAccessKey=jD8qJTIM2cAk2hUj5JuagV/Vl+Ng9RSAuultegThxHo=;EntityPath=orderfulfillment'
         - name: EVENTHUBPATH
           value: 'orderfulfillment'
         - name: PROCESSENDPOINT
