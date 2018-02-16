@@ -21,7 +21,7 @@ spec:
         - name: TEAMNAME
           value: 'team2-ct'
         - name: MONGOHOST
-          value: 'mongodb://prodmongo-mongodb.default.svc.cluster.local'
+          value: 'mongodb://sillymonkeysorders:PTXq1qzwbufLjlI2oaRCyiNhq0mB3lXiZP7bUmqHAa1g5wefLu1WrBszcQmq2AdgOYr6qxQ9MlmtsIFGZ3cG5w==@sillymonkeysorders.documents.azure.com:10255/?ssl=true'
         - name: RABBITMQHOST
           value: 'amqp://user:Sh7VXOTtEy@prod-rabbitmq.default.svc.cluster.local:5672'
         ports:
